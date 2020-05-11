@@ -1,10 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using SalesWebMVC.Data;
+﻿using SalesWebMVC.Data;
 using SalesWebMVC.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace SalesWebMVC.Services
 {
@@ -23,6 +20,13 @@ namespace SalesWebMVC.Services
         {
             // Acessa a fonte de dados e converte para uma lista.
             return _context.Seller.ToList();
+        }
+
+        public void Insert(Seller obj)
+        {
+            // Adiciona um objeto Seller ao banco de dados.
+            _context.Add(obj);
+            _context.SaveChanges();
         }
     }
 }

@@ -58,7 +58,7 @@ namespace SalesWebMVC.Migrations
 
                     b.Property<double>("BaseSalary");
 
-                    b.Property<DateTime>("BithDate");
+                    b.Property<DateTime>("BirthDate");
 
                     b.Property<int?>("DepartmentId");
 
