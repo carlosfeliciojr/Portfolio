@@ -95,6 +95,13 @@ namespace SalesWebMVC.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Seller seller)
         {
+            // Impede de validar os dados caso o JavaScript esteja desativado.
+            if (!ModelState.IsValid)
+            {
+                var departments = _departmentService.FindAll();
+                var viewModel = new SellerFormViewModel { Seller = seller, Departments = departments };
+                return View(viewModel);
+            }
             // Insere no banco de dados.
             _sellerService.Insert(seller);
 
@@ -116,6 +123,14 @@ namespace SalesWebMVC.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit(int id, Seller seller)
         {
+            // Impede de validar os dados caso o JavaScript esteja desativado.
+            if (!ModelState.IsValid)
+            {
+                var departments = _departmentService.FindAll();
+                var viewModel = new SellerFormViewModel { Seller = seller, Departments = departments };
+                return View(viewModel);
+            }
+
             if (id != seller.Id)
             {
                 return RedirectToAction(nameof(Error), new { message = "Id mismatch" });
