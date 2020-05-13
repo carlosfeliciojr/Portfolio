@@ -11,8 +11,15 @@ namespace SalesWebMVC.Models
         public string Email { get; set; }
         public DateTime BirthDate { get; set; }
         public double BaseSalary { get; set; }
-        public Department Department { get; set; } // Implementando e associando Seller a Department
-        public ICollection<SalesRecord> Sales { get; set; } = new List<SalesRecord>(); // Implementando e associando Seller a SalesRecord
+
+        // Implementando e associando Seller a Department.
+        public Department Department { get; set; } 
+
+        // Avisando para Entity Framework garantir que o ID irá existir, para que no banco de dados não seja null.
+        public int DepartmentId { get; set; } 
+        
+        // Implementando e associando Seller a SalesRecord.
+        public ICollection<SalesRecord> Sales { get; set; } = new List<SalesRecord>(); 
 
         public Seller()
         {
