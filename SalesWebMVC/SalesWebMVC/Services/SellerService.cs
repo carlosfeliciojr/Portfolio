@@ -25,7 +25,6 @@ namespace SalesWebMVC.Services
         public void Insert(Seller obj)
         {
             // Adiciona um objeto Seller ao banco de dados.
-            obj.Department = _context.Department.First();
             _context.Add(obj);
             _context.SaveChanges();
         }
