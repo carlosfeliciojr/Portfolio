@@ -35,10 +35,10 @@ namespace SalesWebMVC.Models
         public Department Department { get; set; } 
 
         // Avisando para Entity Framework garantir que o ID irá existir, para que no banco de dados não seja null.
-        public int DepartmentId { get; set; } 
-        
+        public int DepartmentId { get; set; }
+
         // Implementando e associando Seller a SalesRecord.
-        public ICollection<SalesRecord> Sales { get; set; } = new List<SalesRecord>(); 
+        public ICollection<SalesRecord> Sales { get; set; } = new List<SalesRecord>();
 
         public Seller()
         {
@@ -67,7 +67,7 @@ namespace SalesWebMVC.Models
         public double TotalSales(DateTime initial, DateTime final)
         {
             // Procura todo sr entre as datas initial e final e soma a quantia do período.
-            return Sales.Where(sr => sr.Date >= initial && sr.Date <= final).Sum(sr => sr.Amount); 
+            return Sales.Where(sr => sr.Date >= initial && sr.Date <= final).Sum(sr => sr.Amount);
         }
     }
 }
