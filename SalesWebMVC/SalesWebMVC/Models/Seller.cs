@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
@@ -10,34 +9,30 @@ namespace SalesWebMVC.Models
     {
         public int Id { get; set; }
 
-        [Required (ErrorMessage = "{0} required")]
-        [StringLength(60, MinimumLength = 2, ErrorMessage = "{0} size should be between {2} and {1}")]
+        [Required(ErrorMessage = "{0} required")]
+        [StringLength(60, MinimumLength = 3, ErrorMessage = "{0} size should be between {2} and {1}")]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "{0} required")]
-        [EmailAddress(ErrorMessage = "Enter a valid e-mail")]
-        [DataType (DataType.EmailAddress)]
+        [EmailAddress(ErrorMessage = "Enter a valid email")]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "{0} required")]
-        [Display (Name = "Birth Date")]
-        [DataType (DataType.Date)]
-        [DisplayFormat (DataFormatString = "{0:dd/MM/yyyy}")]
+        [Display(Name = "Birth Date")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime BirthDate { get; set; }
 
         [Required(ErrorMessage = "{0} required")]
         [Range(100.0, 50000.0, ErrorMessage = "{0} must be from {1} to {2}")]
-        [Display (Name = "Base Salary")]
-        [DisplayFormat (DataFormatString = "{0:F2}")]
+        [Display(Name = "Base Salary")]
+        [DisplayFormat(DataFormatString = "{0:F2}")]
         public double BaseSalary { get; set; }
 
-        // Implementando e associando Seller a Department.
-        public Department Department { get; set; } 
-
-        // Avisando para Entity Framework garantir que o ID irá existir, para que no banco de dados não seja null.
+        public Department Department { get; set; }
         public int DepartmentId { get; set; }
 
-        // Implementando e associando Seller a SalesRecord.
         public ICollection<SalesRecord> Sales { get; set; } = new List<SalesRecord>();
 
         public Seller()
@@ -66,7 +61,6 @@ namespace SalesWebMVC.Models
 
         public double TotalSales(DateTime initial, DateTime final)
         {
-            // Procura todo sr entre as datas initial e final e soma a quantia do período.
             return Sales.Where(sr => sr.Date >= initial && sr.Date <= final).Sum(sr => sr.Amount);
         }
     }
