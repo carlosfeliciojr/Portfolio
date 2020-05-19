@@ -17,7 +17,7 @@ namespace SalesWebMVC.Controllers
         // Criada dependencia para DepartmentService
         private readonly DepartmentService _departmentService;
 
-        public ICollection<Department> departments { get; private set; }
+        public ICollection<Department> Departments { get; private set; }
 
         public SellersController(SellerService sellerService, DepartmentService departmentService)
         {
