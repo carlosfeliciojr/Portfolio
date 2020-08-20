@@ -1,0 +1,43 @@
+﻿@model ClienteModel
+<br />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td colspan="2" style="text-align: center; font-weight: bolder">AÇÃO</td>
+            <td style="text-align: center; font-weight: bolder">ID</td>
+            <td style="text-align: center; font-weight: bolder">NOME</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in (List<ClienteModel>)ViewBag.ListaClientes)
+        {
+        <tr>
+            <td style="width:80px;"><button class="btn btn-warning" onclick="registrar(@item.Id.ToString())">Editar</button></td>
+            <td style="width:80px;"><button class="btn btn-danger" onclick="excluir(@item.Id.ToString())">Excluir</button></td>
+            <td style="text-align: center">@item.Id.ToString()</td>
+            <td style="text-align: center">@item.Nome.ToString()</td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<button class="btn btn-block btn-primary" onclick="registrar()">Registrar Cliente</button>
+
+<script>
+    function registrar(id) {
+        if (id == null) {
+            id = "";
+        }
+        else {
+            id = "/" + id;
+        }
+
+        // Redireciona para a página registrar cliente.
+        window.location.href = window.location.origin + "/Home/Registrar" + id;
+    }
+
+    function excluir(id) {
+        // Redireciona para a páginaexcluir cliente.
+        window.location.href = window.location.origin + "/Home/Excluir/" + id;
+    }
+</script>
