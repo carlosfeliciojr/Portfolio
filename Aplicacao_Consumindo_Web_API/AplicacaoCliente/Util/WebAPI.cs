@@ -13,7 +13,6 @@ namespace AplicacaoCliente.Util
     public class WebAPI
     {
         // Endereço da API.
-        public static string URI = "https://localhost:44392/api/cliente/";
         public static string TOKEN = "123sfas146sdf46165546dsf";
 
         private static string RequestGET_DELETE(string metodo, string parametro, string tipo)
@@ -25,7 +24,7 @@ namespace AplicacaoCliente.Util
             // Obtem uma resposta. "(HttpWebResponse)" é um cast.
             var response = (HttpWebResponse)request.GetResponse();
             // Tranforma os dados em formato String para exibir no console.
-            var responseString = new System.IO.StreamReader(response.GetResponseStream()).ReadToEnd();
+            var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
 
             return responseString;
         }
