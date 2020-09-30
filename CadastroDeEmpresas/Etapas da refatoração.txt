@@ -1,0 +1,138 @@
+Análise de código para refatoração
+
+Pontos a serem analisados de acordo com o curso Domínios Ricos:
+
+Alterado design do projeto para seguir conceito de Domain Driven Desing (DDD).
+
+Definindo resposabilidades de acordo com as respectivas classes...
+
+Alteração de namespaces
+
+Alterando nome de classes
+
+Movendo classes para suas determinadas pastas
+
+Implementando modelo MVC...
+
+Implementando injeção de dependencia para desacoplamento de classes
+
+
+
+Pontos a serem analisados de acordo com a convenção:
+
+0. Remoção de Using sem uso.
+	Estado: Removido os 'using' sem uso.
+		Motivo: Manter o código organizado e de facil leitura.
+
+1. Fazer uso de PascalCasing para nome de classes e métodos.
+	Estado: Alguns métodos estavam com nomes fora da convenção, realizado refatoração.
+		Motivo: Fácil leitura.
+
+2. Fazer uso de camelCasing para argumentos de métodos e variáveis locais.
+	Estado: Alguns argumentos de métodos e variáveis locais estavam fora da convenção, realizado refatoração.
+		Motivo: Manter o código organizado e de facil leitura.
+		
+3. Não fazer uso de notações Hungaras ou qualquer tipo de identificação nos identificadores.
+	Estado: De acordo com a convenção.
+		Motivo:
+
+4. Não fazer uso de caixa alta em contantes e variáveis readonly.	
+	Estado: De acordo com a convenção.
+		Motivo:
+		
+5. Use nomes significativos para variáveis.
+	Estado: De acordo com a convenção.
+		Motivo:
+
+6. Evite usar abreviações. Exceções: abreviações comumente usadas como nomes, como Id, Xml, Ftp, Uri.
+	Estado: De acordo com a convenção.
+		Motivo:
+
+7. Use PascalCasing ou camelCasing (dependendo do tipo de identificador) para abreviações de 3 caracteres ou 
+   mais (2 caracteres são maiúsculos quando PascalCasing é apropriado ou dentro do identificador).
+	Estado: De acordo com a convenção.
+		Motivo:
+
+8. Não faça uso de underline em identificadores. Exceção: você pode usar underline como prefixo para variáveis privadas.
+	Estado: Algumas variáveis estavam concatenadas com underline.
+		Motivo: Torna o código mais natural de ler (sem 'insultos'). Também evita o estresse do sublinhado (incapacidade de ver o sublinhado).
+
+9. Use nomes de tipo predefinidos (aliases C #) como int, float, string para declarações locais, de parâmetros 
+   e de membros. Use nomes .NET Framework como Int32, Single, String ao acessar os membros estáticos do tipo, 
+   como Int32.Experimente Parse ou String.Join.
+   	Estado: De acordo com a convenção.
+		Motivo:
+
+10. Use o tipo implícito var para declarações de variáveis locais. Exceção: tipos primitivos (int, string, double, etc) usam 
+    nomes predefinidos.
+	Estado: Algumas variáveis estavam com o nome fora da convenção e sem padrão, umas em portugês, outras em inglês. Corrigido.
+		Motivo: Remove a desordem, especialmente com tipos genéricos complexos. O tipo é facilmente detectado com dicas de 
+		ferramentas do Visual Studio.
+
+11. Use substantivos ou frases nominais para nomear uma classe.
+   	Estado: De acordo com a convenção.
+		Motivo:
+
+12. Prefixe interfaces com a letra I. Os nomes das interfaces são substantivos (frases) ou adjetivos.
+   	Estado: De acordo com a convenção.
+		Motivo:
+
+13. Nomeie os arquivos de origem de acordo com suas classes principais. Exceção: nomes de arquivos com classes parciais refletem sua origem ou 
+    finalidade, por exemplo, designer, gerado, etc.
+   	Estado: De acordo com a convenção.
+		Motivo:
+
+14. Organize os namespaces com uma estrutura claramente definida:
+   	Estado: De acordo com a convenção.
+		Motivo:
+
+15. Alinhe verticalmente as chaves:
+   	Estado: De acordo com a convenção.
+		Motivo:
+
+16. Declare todas as variáveis de membro no topo de uma classe, com variáveis estáticas no topo.
+
+
+
+17. Use nomes singulares para enums. Exceção: enums do campo de bits.
+
+
+
+18. Não especifique explicitamente um tipo de enum ou valores de enums (exceto campos de bits).
+
+
+
+19. Não use um sufixo "Enum" em nomes de tipo de enum.
+
+
+
+20. Não use sufixos "Sinalizadores" ou "Sinalizadores" em nomes de tipo enum.
+
+
+
+21. Use o sufixo EventArgs na criação das novas classes que compreendem as informações sobre o evento.
+
+
+
+22. Nomeie os manipuladores de eventos (delegados usados como tipos de eventos) com o sufixo "EventHandler", 
+    conforme mostrado no exemplo a seguir.
+
+
+
+23. Não crie nomes de parâmetros em métodos (ou construtores) que diferem apenas pelo registro.
+
+
+
+24. USE dois parâmetros chamados sender e e em tratadores de evento. O parâmetro sender representa o objeto 
+    que gerou o evento. O parâmetro do remetente é tipicamente do tipo objeto, mesmo se for possível empregar um tipo mais específico.
+
+
+
+25. Use o sufixo Exceção na criação das novas classes compreendendo as informações sobre a exceção.
+
+
+
+26. Use o prefixo Any, Is, Have ou palavras-chave semelhantes para o identificador booleano.
+
+
+

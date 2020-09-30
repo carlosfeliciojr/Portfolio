@@ -1,0 +1,14 @@
+﻿<h3>Deseja realmente registrar a empresa no banco de dados?</h3>
+<br />
+<button onclick="returntoindex()" class="btn btn-default" type="submit">Não</button>
+<button onclick="register()" class="btn btn-success" type="submit">Sim</button>
+
+<script>
+    function returntoindex() {
+        window.location.href = window.location.origin + "/Home/Index"
+    }
+
+    function register() {
+        window.location.href = window.location.origin + "/Home/RegisterCompany"
+    }
+</script>

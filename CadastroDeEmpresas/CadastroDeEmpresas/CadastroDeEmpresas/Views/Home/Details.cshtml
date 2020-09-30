@@ -1,0 +1,128 @@
+﻿<body>
+    <h2>Detalhes</h2>
+
+    <br />
+    <div class="container">
+        <div class="row">
+            <form>
+                <h3>
+                    Dados:
+                </h3>
+                <div class="row">
+                    <label>Cnpj</label>
+                    <input class="form-control" value="@ViewBag.CompanyData.Cnpj.ToString()" />
+                </div>
+                <div class="row">
+                    <label>Razão Social</label>
+                    <input class="form-control" value="@ViewBag.CompanyData.Name.ToString()" />
+                </div>
+                <div class="row">
+                    <label>Nome Fantasia</label>
+                    <input class="form-control" value="@ViewBag.CompanyData.FantasyName.ToString()" />
+                </div>
+                <div class="row">
+                    <label>Abertura</label>
+                    <input class="form-control" value=" @ViewBag.CompanyData.Opening.ToString()" />
+                </div>
+                <div class="row">
+                    <label>Tipo</label>
+                    <input class="form-control" value="@ViewBag.CompanyData.Type.ToString()" />
+                </div>
+                <div class="row">
+                    <label>Porte</label>
+                    <input class="form-control" value="@ViewBag.CompanyData.Size.ToString()" />
+                </div>
+                <div class="row">
+                    <label>Ultima Atualização</label>
+                    <input class="form-control" value="@ViewBag.CompanyData.LastUpdate.ToString()" />
+                </div>
+                <div class="row">
+                        <label>ERF</label>
+                        <input class="form-control" value="@ViewBag.CompanyData.ResponsibleFederativeEntity.ToString()" />
+                    </div>
+                <div class="row">
+                    <label>Natureza Juridica</label>
+                    <input class="form-control" value="@ViewBag.CompanyData.JudicialNature.ToString()" />
+                </div>
+                <div class="row">
+                    <label>Capital Social</label>
+                    <input class="form-control" value="@ViewBag.CompanyData.SocialCapital.ToString()" />
+                </div>
+                <div class="row">
+                    <label>Situação</label>
+                    <input class="form-control" value="@ViewBag.CompanyData.Situation.ToString()" />
+                </div>
+                <div class="row">
+                    <label>Data da Situação</label>
+                    <input class="form-control" value="@ViewBag.CompanyData.DateSituation.ToString()" />
+                </div>
+                <div class="row">
+                    <label>Motivo da Situação</label>
+                    <input class="form-control" value="@ViewBag.CompanyData.ReasonSituation.ToString()" />
+                </div>
+                <div class="row">
+                    <label>Situação Especial</label>
+                    <input class="form-control" value="@ViewBag.CompanyData.SpecialSituation.ToString()" />
+                </div>
+                <div class="row">
+                    <label>Data da Situação Especial</label>
+                    <input class="form-control" value="@ViewBag.CompanyData.DateSpecialSituation.ToString()" />
+                </div>
+                <br />
+                <h3>Contato:</h3>
+                <div class="row">
+                    <label>Telefone</label>
+                    <input class="form-control" value="@ViewBag.CompanyData.Telephone.ToString()" />
+                </div>
+                <div class="row">
+                    <label>E-mail</label>
+                    <input class="form-control" value="@ViewBag.CompanyData.Email.ToString()" />
+                </div>
+
+
+                <br />
+                <h3>Endereço:</h3>
+                <div class="row">
+                    <label>CEP</label>
+                    <input class="form-control" value="@ViewBag.CompanyData.ZipCode.ToString()" />
+                </div>
+                <div class="row">
+                    <label>Logradouro</label>
+                    <input class="form-control" value="@ViewBag.CompanyData.Street.ToString()" />
+                </div>
+                <div class="row">
+                    <label>Numero</label>
+                    <input class="form-control" value="@ViewBag.CompanyData.Number.ToString()" />
+                </div>
+                <div class="row">
+                    <label>Complemento</label>
+                    <input class="form-control" value="@ViewBag.CompanyData.Complement.ToString()" />
+                </div>
+                <div class="row">
+                    <label>Bairro</label>
+                    <input class="form-control" value="@ViewBag.CompanyData.Neighborhood.ToString()" />
+                </div>
+                <div class="row">
+                    <label>Município</label>
+                    <input class="form-control" value="@ViewBag.CompanyData.City.ToString()" />
+                </div>
+                <div class="row">
+                    <label>UF</label>
+                    <input class="form-control" value="@ViewBag.CompanyData.State.ToString()" />
+                </div>
+            </form>
+            <br />
+            <br />
+
+            <button onclick="registercompany()" class="btn btn-success" type="submit">Registrar Empresa no Banco de Dados</button>
+        </div>
+    </div>
+</body>
+<script>
+    function registercompany() {
+        window.location.href = window.location.origin + "/Home/RegisterConfirmation"
+    }
+
+</script>
+
+

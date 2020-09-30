@@ -1,0 +1,14 @@
+﻿<h3>Deseja realmente excluir a empresa do banco de dados?</h3>
+
+<button onclick="returntoconsult()" class="btn btn-default" type="submit">Não</button>
+<button onclick="exclude()" class="btn btn-danger" type="submit">Sim</button>
+
+<script>
+    function returntoconsult() {
+        window.location.href = window.location.origin + "/Home/Index"
+    }
+
+    function exclude() {
+        window.location.href = window.location.origin + "/Home/Exclude"
+    }
+</script>
